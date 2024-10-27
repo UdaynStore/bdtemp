@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Countdown</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @keyframes colorChange {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .funky-heading {
+            background: linear-gradient(270deg, #ff00ff, #00ffff, #ff00ff, #ffff00, #00ff00);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: colorChange 10s ease infinite;
+        }
+    </style>
+    <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="funky-heading">🎂 Bhai ka Birthday Countdown 🍒🎉</h1>
+        <div class="countdown">
+            <div class="time-block">
+                <span id="days">00</span>
+                <span class="label">Days</span>
+            </div>
+            <div class="time-block">
+                <span id="hours">00</span>
+                <span class="label">Hours</span>
+            </div>
+            <div class="time-block">
+                <span id="minutes">00</span>
+                <span class="label">Minutes</span>
+            </div>
+            <div class="time-block">
+                <span id="seconds">00</span>
+                <span class="label">Seconds</span>
+            </div>
+        </div>
+        
+        <!-- Instagram Embed -->
+        <div class="instagram-embed">
+            <blockquote 
+                class="instagram-media" 
+                data-instgrm-captioned 
+                data-instgrm-permalink="https://www.instagram.com/reel/C-l6L93pJlH/?utm_source=ig_embed&amp;utm_campaign=loading" 
+                data-instgrm-version="14"
+                style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+            </blockquote>
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="https://i.ytimg.com/vi/TORK51iKBTQ/sddefault.jpg" alt="Circuit and Munna Bhai">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.indianexpress.com/2023/06/arshad-warsi-sanjay-dutt.jpg" alt="Arshad Warsi and Sanjay Dutt">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://github.com/Uday-461/bdtemp/raw/82e8e23d6f3a3722e35015288e0a9e0122dee5ea/image9.jpeg" alt="Image 9">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://github.com/Uday-461/bdtemp/raw/82e8e23d6f3a3722e35015288e0a9e0122dee5ea/image8.jpeg" alt="Image 8">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://github.com/Uday-461/bdtemp/raw/82e8e23d6f3a3722e35015288e0a9e0122dee5ea/image7.jpeg" alt="Image 7">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://github.com/Uday-461/bdtemp/raw/82e8e23d6f3a3722e35015288e0a9e0122dee5ea/image6.jpeg" alt="Image 6">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://github.com/Uday-461/bdtemp/raw/82e8e23d6f3a3722e35015288e0a9e0122dee5ea/image5.jpeg" alt="Image 5">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://github.com/Uday-461/bdtemp/raw/82e8e23d6f3a3722e35015288e0a9e0122dee5ea/image4.jpeg" alt="Image 4">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://github.com/Uday-461/bdtemp/raw/82e8e23d6f3a3722e35015288e0a9e0122dee5ea/image3.jpeg" alt="Image 3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://github.com/Uday-461/bdtemp/raw/82e8e23d6f3a3722e35015288e0a9e0122dee5ea/image2.jpeg" alt="Image 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://github.com/Uday-461/bdtemp/raw/82e8e23d6f3a3722e35015288e0a9e0122dee5ea/image11.jpeg" alt="Image 11">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://github.com/Uday-461/bdtemp/raw/82e8e23d6f3a3722e35015288e0a9e0122dee5ea/image10.jpeg" alt="Image 10">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://github.com/Uday-461/bdtemp/raw/82e8e23d6f3a3722e35015288e0a9e0122dee5ea/image1.jpeg" alt="Image 1">
+                </div>
+            </div>
+            <button class="carousel-button prev">❮</button>
+            <button class="carousel-button next">❯</button>
+            <div class="carousel-dots"></div>
+        </div>
+        
+        <!-- Add this near the top of the body, after the container div -->
+        <button id="musicToggle" class="music-toggle">🔇</button>
+        
+        <!-- Add this at the end of the body -->
+        <div id="youtubePlayer" style="display:none;"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="countdown.js"></script>
+    <script src="carousel.js"></script>
+    <script async src="https://www.instagram.com/embed.js"></script>
+    <script>
+        // Reload Instagram embed if it doesn't load properly
+        window.onload = function() {
+            if (window.instgrm) {
+                window.instgrm.Embeds.process();
+            }
+        };
+
+        var player;
+        var attemptedAutoplay = false;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtubePlayer', {
+                height: '0',
+                width: '0',
+                videoId: 'iXFIIcpsd38',
+                playerVars: {
+                    'autoplay': 1,
+                    'controls': 0,
+                    'loop': 1,
+                    'playlist': 'iXFIIcpsd38'
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.setVolume(6); // Set initial volume to 6%
+            attemptAutoplay();
+
+            var musicToggle = document.getElementById('musicToggle');
+            musicToggle.addEventListener('click', toggleMusic);
+
+            // Add click event listeners to carousel buttons
+            document.querySelector('.carousel-button.prev').addEventListener('click', attemptAutoplay);
+            document.querySelector('.carousel-button.next').addEventListener('click', attemptAutoplay);
+        }
+
+        function attemptAutoplay() {
+            if (!attemptedAutoplay) {
+                var promise = player.playVideo();
+                if (promise !== undefined) {
+                    promise.catch(error => {
+                        console.log('Autoplay was prevented. User interaction required.');
+                    });
+                }
+                attemptedAutoplay = true;
+            }
+        }
+
+        function toggleMusic() {
+            if (player.getPlayerState() == 1) {
+                player.pauseVideo();
+                musicToggle.textContent = '🎵';
+            } else {
+                player.playVideo();
+                musicToggle.textContent = '🔇';
+            }
+        }
+
+        // Attempt to play audio on any user interaction
+        document.addEventListener('click', attemptAutoplay, { once: true });
+
+        console.log('YouTube API Ready:', typeof YT !== 'undefined');
+        console.log('Music toggle button:', document.getElementById('musicToggle'));
+
+        window.addEventListener('load', function() {
+            console.log('Window loaded');
+            if (typeof player !== 'undefined' && player.getPlayerState) {
+                console.log('Player state:', player.getPlayerState());
+            }
+        });
+    </script>
+</body>
+</html>
